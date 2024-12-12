@@ -32,7 +32,10 @@ export function Pricing() {
 								<CheckCircle2 className="text-gray-400 h-6 w-6 flex-shrink-0 mr-2" />
 								新規お申込者様限定
 							</p>
-							<button type="button" className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
+							<button
+								type="button"
+								className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded"
+							>
 								試してみる
 								<svg
 									fill="none"
@@ -62,7 +65,9 @@ export function Pricing() {
 							</h2>
 							<h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
 								<span>¥50,000</span>
-								<span className="text-lg ml-1 font-normal text-gray-500">/月</span>
+								<span className="text-lg ml-1 font-normal text-gray-500">
+									/月
+								</span>
 							</h1>
 							<p className="flex items-center text-gray-600 mb-2">
 								<CheckCircle2 className="text-gray-400 h-6 w-6 flex-shrink-0 mr-2" />
@@ -73,7 +78,10 @@ export function Pricing() {
 								サブスクリプション契約
 							</p>
 
-							<button type="button" className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
+							<button
+								type="button"
+								className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"
+							>
 								問い合わせる
 								<svg
 									fill="none"
@@ -95,6 +103,6 @@ export function Pricing() {
 					</div>
 				</div>
 			</div>
-		</section >
+		</section>
 	);
 }
