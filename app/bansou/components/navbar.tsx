@@ -12,7 +12,7 @@ export function Navbar() {
 		{ href: "#case-study", label: "事例" },
 		{ href: "#features", label: "機能" },
 		{ href: "#pricing", label: "価格" },
-		{ href: "#contact", label: "お問い合わせ" },
+		{ href: "https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc", label: "お問い合わせ" },
 	];
 
 	return (

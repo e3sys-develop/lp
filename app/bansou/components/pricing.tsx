@@ -56,8 +56,8 @@ export function Pricing() {
 						</div>
 					</div>
 					<div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-						<div className="h-full p-6 rounded-lg border-2 border-indigo-500 flex flex-col relative overflow-hidden">
-							<span className="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
+						<div className="h-full p-6 rounded-lg border-2 border-blue-500 flex flex-col relative overflow-hidden">
+							<span className="bg-blue-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
 								人気
 							</span>
 							<h2 className="text-sm tracking-widest title-font mb-1 font-medium">
@@ -80,7 +80,7 @@ export function Pricing() {
 
 							<button
 								type="button"
-								className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded"
+								className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded"
 							>
 								問い合わせる
 								<svg

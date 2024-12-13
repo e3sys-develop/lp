@@ -18,7 +18,7 @@ export function HeroSection() {
 						あるときはCTOのように
 					</p>
 					<div className="flex justify-center">
-						<Link href="#contact">
+						<Link href="https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc">
 							<button
 								type="button"
 								className="text-lg px-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"

@@ -25,13 +25,13 @@ export function Features() {
 					{featuresList.map((feature) => (
 						<div key={feature.id} className="p-2 sm:w-1/2 w-full">
 							<div className="bg-gray-100 rounded flex p-4 h-full items-center">
-								<CheckCircle2 className="text-indigo-500 h-6 w-6 flex-shrink-0 mr-2" />
+								<CheckCircle2 className="text-blue-500 h-6 w-6 flex-shrink-0 mr-2" />
 								<span className="title-font font-medium">{feature.text}</span>
 							</div>
 						</div>
 					))}
 				</div>
-				<Link href="#contact">
+				<Link href="https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc">
 					<button
 						type="button"
 						className="flex mx-auto mt-16 text-lg px-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
