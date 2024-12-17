@@ -18,8 +18,6 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="ja" className="scroll-smooth">
-			<body className={noto.className}>{children}</body>
-		</html>
+		<div className={noto.className}>{children}</div>
 	);
 }
