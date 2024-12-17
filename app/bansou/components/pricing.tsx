@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export function Pricing() {
 	return (
@@ -32,26 +33,28 @@ export function Pricing() {
 								<CheckCircle2 className="text-gray-400 h-6 w-6 flex-shrink-0 mr-2" />
 								新規お申込者様限定
 							</p>
-							<button
-								type="button"
-								className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded"
-							>
-								試してみる
-								<svg
-									fill="none"
-									stroke="currentColor"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									className="w-4 h-4 ml-auto"
-									viewBox="0 0 24 24"
+							<Link href="https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc">
+								<button
+									type="button"
+									className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded"
 								>
-									<title>Arrow Icon</title>
-									<path d="M5 12h14M12 5l7 7-7 7" />
-								</svg>
-							</button>
+									試してみる
+									<svg
+										fill="none"
+										stroke="currentColor"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="2"
+										className="w-4 h-4 ml-auto"
+										viewBox="0 0 24 24"
+									>
+										<title>Arrow Icon</title>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</button>
+							</Link>
 							<p className="text-xs text-gray-500 mt-3">
-								チケット消費、または申し込み日から1か月でトライアル終了となります
+								1か月でトライアル終了となります。
 							</p>
 						</div>
 					</div>
@@ -78,24 +81,26 @@ export function Pricing() {
 								サブスクリプション契約
 							</p>
 
-							<button
-								type="button"
-								className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded"
-							>
-								問い合わせる
-								<svg
-									fill="none"
-									stroke="currentColor"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									className="w-4 h-4 ml-auto"
-									viewBox="0 0 24 24"
+							<Link href="https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc">
+								<button
+									type="button"
+									className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded"
 								>
-									<title>Arrow Icon</title>
-									<path d="M5 12h14M12 5l7 7-7 7" />
-								</svg>
-							</button>
+									問い合わせる
+									<svg
+										fill="none"
+										stroke="currentColor"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="2"
+										className="w-4 h-4 ml-auto"
+										viewBox="0 0 24 24"
+									>
+										<title>Arrow Icon</title>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</button>
+							</Link>
 							<p className="text-xs text-gray-500 mt-3">
 								1チケット¥10,000で追加できます。
 							</p>

@@ -60,7 +60,7 @@ export function CaseStudies() {
 							<div className="inline-flex items-center">
 								<img
 									alt="testimonial"
-									src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80"
+									src="/bansou/designer.jpg"
 									className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
 								/>
 								<span className="flex-grow flex flex-col pl-4">
@@ -93,7 +93,7 @@ export function CaseStudies() {
 							<div className="inline-flex items-center">
 								<img
 									alt="testimonial"
-									src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+									src="/bansou/engineer.jpg"
 									className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
 								/>
 								<span className="flex-grow flex flex-col pl-4">
