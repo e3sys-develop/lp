@@ -8,7 +8,7 @@ export function HeroSection() {
 					<h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">
 						現役エンジニアが
 						<br className="hidden lg:inline-block" />
-						伴走者としてサポートします
+						伴走者としてサポート
 					</h1>
 					<p className="mb-8 leading-relaxed">
 						あるときは先輩社員のように

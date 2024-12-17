@@ -12,7 +12,7 @@ const featuresList = [
 export function Features() {
 	return (
 		<section id="features" className="text-gray-600 body-font bg-gray-50">
-			<div className="container px-5 py-24 mx-auto">
+			<div className="container px-5 py-24 mx-auto flex flex-col items-center">
 				<div className="text-center mb-20">
 					<h1 className="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">
 						BANSOUの特長
@@ -34,7 +34,7 @@ export function Features() {
 				<Link href="https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc">
 					<button
 						type="button"
-						className="flex mx-auto mt-16 text-lg px-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+						className="flex mt-16 text-lg px-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
 					>
 						無料で相談する
 					</button>

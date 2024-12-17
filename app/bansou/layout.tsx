@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 		"BANSOUならプロの現役エンジニアに気軽にIT関連のあらゆる相談を行えるサービスです。CTOとして、教育担当者として、IT導入管理部門として、お客様の「自走」にコミットします。",
 };
 
-export default function RootLayout({
+export default function BansouLayout({
 	children,
 }: {
 	children: React.ReactNode;

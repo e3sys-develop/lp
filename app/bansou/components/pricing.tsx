@@ -15,7 +15,7 @@ export function Pricing() {
 						※ 契約・支払い完了後からチケット利用が対応となります。
 					</p>
 				</div>
-				<div className="flex flex-wrap -m-4">
+				<div className="flex flex-wrap -m-4 justify-center">
 					<div className="p-4 xl:w-1/4 md:w-1/2 w-full">
 						<div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
 							<h2 className="text-sm tracking-widest title-font mb-1 font-medium">
