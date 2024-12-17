@@ -76,7 +76,7 @@ export function Pricing() {
 								<CheckCircle2 className="text-gray-400 h-6 w-6 flex-shrink-0 mr-2" />
 								5チケット／月
 							</p>
-							<p className="flex items-center text-gray-600 mb-2">
+							<p className="flex items-center text-gray-600 mb-12">
 								<CheckCircle2 className="text-gray-400 h-6 w-6 flex-shrink-0 mr-2" />
 								サブスクリプション契約
 							</p>
