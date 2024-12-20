@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
 	title: "株式会社エミシス",
@@ -16,6 +17,7 @@ export default function RootLayout({
 			<body>
 				{children}
 			</body>
+			<GoogleTagManager gtmId="GTM-WT2XGBRR" />
 		</html>
 	);
 }
