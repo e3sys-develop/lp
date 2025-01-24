@@ -12,6 +12,19 @@ export const metadata: Metadata = {
 	title: "BANSOU | 現役エンジニアが伴走してくれるサービス",
 	description:
 		"BANSOUならプロの現役エンジニアに気軽にIT関連のあらゆる相談を行えるサービスです。CTOとして、教育担当者として、IT導入管理部門として、お客様の「自走」にコミットします。",
+	openGraph: {
+		type: "website",
+		title: "BANSOU | 現役エンジニアが伴走してくれるサービス",
+		description:
+			"BANSOUならプロの現役エンジニアに気軽にIT関連のあらゆる相談を行えるサービスです。CTOとして、教育担当者として、IT導入管理部門として、お客様の「自走」にコミットします。",
+		images: [
+			{
+				url: "/bansou/ogp-bansou.png",
+				width: 1472,
+				height: 832,
+			},
+		]
+	}
 };
 
 export default function BansouLayout({
