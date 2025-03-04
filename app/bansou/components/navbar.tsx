@@ -11,6 +11,7 @@ export function Navbar() {
 		{ href: "#about", label: "BANSOUとは" },
 		{ href: "#case-study", label: "事例" },
 		{ href: "#features", label: "機能" },
+		{ href: "#ai", label: "AI活用" },
 		{ href: "#pricing", label: "価格" },
 		{ href: "https://share.hsforms.com/1P1QwdXqTQ-2uufI7qNRbsAsw9sc", label: "お問い合わせ" },
 	];

@@ -14,7 +14,7 @@ const aiServices = [
 
 export function PartnersSection() {
   return (
-    <section className="lg:py-16 bg-white">
+    <section className="lg:py-16 bg-white" id="ai">
       <div className="container mx-auto px-4">
         <Card className="border-none shadow-lg">
           <CardContent className="pt-12">
