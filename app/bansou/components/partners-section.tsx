@@ -9,7 +9,9 @@ const aiServices = [
   { id: 3, name: "Cursor", color: "text-black-600" },
   { id: 4, name: "Github Copilot", color: "text-black-600" },
   { id: 5, name: "Claude", color: "text-yellow-600" },
-  { id: 6, name: "Gemini", color: "text-indigo-600" },
+  { id: 6, name: "Gemini", color: "text-blue-600" },
+  { id: 7, name: "DALL-E", color: "text-black-600" },
+  { id: 8, name: "Midjourney", color: "text-black-600" },
 ];
 
 export function PartnersSection() {
@@ -23,14 +25,13 @@ export function PartnersSection() {
                 BANSOUが提供する<br />AI活用サポート
               </h2>
               <p className="text-base leading-relaxed max-w-2xl mx-auto text-gray-600">
-                現役エンジニアが貴社のビジネス課題を理解し、最適なAI活用に対応。<br />
-                ツール選定から導入・運用まで伴走し、業務効率化やデータ活用を加速させます。
+                話題の生成AIも多種にわたり、実績に基づいた活用の支援が可能です。
               </p>
             </div>
-            <TextCarousel services={aiServices} columns={3} />
+            <TextCarousel services={aiServices} />
           </CardContent>
         </Card>
       </div>
     </section>
   );
-} 
+}
