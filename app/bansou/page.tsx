@@ -7,6 +7,7 @@ import { Features } from "@/app/bansou/components/features";
 import { HeroSection } from "@/app/bansou/components/hero-section";
 import { Pricing } from "@/app/bansou/components/pricing";
 import { Problems } from "@/app/bansou/components/problems";
+import { PartnersSection } from "./components/partners-section";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 				<AboutSection />
 				<CaseStudies />
 				<Features />
+				<PartnersSection />
 				<Pricing />
 				<CTA />
 			</main>
