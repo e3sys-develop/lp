@@ -14,13 +14,13 @@ const aiServices = [
 
 export function PartnersSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="lg:py-16 bg-white">
       <div className="container mx-auto px-4">
         <Card className="border-none shadow-lg">
           <CardContent className="pt-12">
             <div className="text-center space-y-4 mb-8">
               <h2 className="text-3xl font-bold tracking-tight leading-none text-gray-900">
-                BANSOUが提供するAI活用サポート
+                BANSOUが提供する<br />AI活用サポート
               </h2>
               <p className="text-base leading-relaxed max-w-2xl mx-auto text-gray-600">
                 現役エンジニアが貴社のビジネス課題を理解し、最適なAI活用に対応。<br />

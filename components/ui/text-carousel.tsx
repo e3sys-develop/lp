@@ -24,7 +24,7 @@ function ServiceColumn({ services, columnIndex, currentTime }: ServiceColumnProp
 
   return (
     <motion.div
-      className="relative h-14 w-32 overflow-hidden md:h-20 md:w-56"
+      className="relative h-20 w-36 overflow-hidden md:h-20 md:w-56"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -53,8 +53,8 @@ function ServiceColumn({ services, columnIndex, currentTime }: ServiceColumnProp
             transition: { duration: 0.3 },
           }}
         >
-          <div 
-            className={`text-lg md:text-xl font-bold ${currentService.color || 'text-blue-600'} px-4 py-2 rounded-lg border border-gray-200 bg-white shadow-sm`}
+          <div
+            className={`text-md md:text-xl font-bold text-center ${currentService.color || 'text-blue-600'} px-2 py-2 rounded-lg border border-gray-200 bg-white shadow-sm`}
           >
             {currentService.name}
           </div>

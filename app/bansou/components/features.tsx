@@ -14,7 +14,7 @@ export function Features() {
 		<section id="features" className="text-gray-600 body-font bg-gray-50">
 			<div className="container px-5 py-24 mx-auto flex flex-col items-center">
 				<div className="text-center mb-20">
-					<h1 className="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">
+					<h1 className="text-3xl font-bold text-center title-font text-gray-900 mb-4">
 						BANSOUの特長
 					</h1>
 					<p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
