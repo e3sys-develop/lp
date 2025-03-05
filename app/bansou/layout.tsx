@@ -1,8 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import { Navbar } from "@/app/bansou/components/navbar";
-import { Footer } from "@/app/bansou/components/footer";
 
 const noto = Noto_Sans_JP({
 	subsets: ["latin"],
@@ -23,8 +21,8 @@ export const metadata: Metadata = {
 				width: 1472,
 				height: 832,
 			},
-		]
-	}
+		],
+	},
 };
 
 export default function BansouLayout({
@@ -32,11 +30,5 @@ export default function BansouLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<div className={noto.className}>
-			<Navbar />
-			{children}
-			<Footer />
-		</div>
-	);
+	return <div className={noto.className}>{children}</div>;
 }

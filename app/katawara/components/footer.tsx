@@ -58,8 +58,8 @@ export function Footer() {
 					</div>
 					<div className="text-center">
 						<Image
-							src="/bansou/QR_BANSOU.png"
-							alt="BANSOU QR Code"
+							src="/katawara/QR_katawara.png"
+							alt="katawara QR Code"
 							width={200}
 							height={200}
 							className="w-48 h-48 mx-auto rounded"
@@ -67,7 +67,7 @@ export function Footer() {
 					</div>
 				</div>
 				<div className="text-center mt-8 pt-8 border-t border-gray-800">
-					<p>&copy; 2024 BANSOU. All Rights Reserved.</p>
+					<p>&copy; 2024 KATAWARA. All Rights Reserved.</p>
 				</div>
 			</div>
 		</footer>

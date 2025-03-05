@@ -19,6 +19,6 @@ body {
 	background: var(--background);
 	font-family: Arial, Helvetica, sans-serif;
 	overflow-wrap: anywhere;
-    word-break: normal;
-    line-break: strict;
+	word-break: normal;
+	line-break: strict;
 }
