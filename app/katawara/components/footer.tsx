@@ -67,7 +67,7 @@ export function Footer() {
 					</div>
 				</div>
 				<div className="text-center mt-8 pt-8 border-t border-gray-800">
-					<p>&copy; 2024 katawara. All Rights Reserved.</p>
+					<p>&copy; 2024 KATAWARA. All Rights Reserved.</p>
 				</div>
 			</div>
 		</footer>
