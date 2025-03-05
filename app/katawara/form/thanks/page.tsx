@@ -8,7 +8,7 @@ const katawaraThankYouPage = () => {
 					お問い合わせいただきありがとうございます。
 				</h1>
 				<p className="text-gray-700 mb-4">
-					このたびはkatawaraにお問い合わせいただき、誠にありがとうございます。
+					このたびはKATAWARAにお問い合わせいただき、誠にありがとうございます。
 					内容を確認のうえ、担当者より改めてご連絡させていただきます。
 					通常、2〜3営業日以内にご返信いたしますので、今しばらくお待ちください。
 				</p>
@@ -36,9 +36,9 @@ const katawaraThankYouPage = () => {
 					</p>
 				</div>
 				<p className="text-gray-700">
-					引き続き、katawaraをよろしくお願いいたします。
+					引き続き、KATAWARAをよろしくお願いいたします。
 				</p>
-				<p className="text-gray-700 mt-4 font-semibold">katawaraチーム一同</p>
+				<p className="text-gray-700 mt-4 font-semibold">KATAWARAチーム一同</p>
 				<Link href="/katawara">
 					<button
 						type="button"
