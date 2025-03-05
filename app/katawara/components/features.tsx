@@ -15,7 +15,7 @@ export function Features() {
 			<div className="container px-5 py-24 mx-auto flex flex-col items-center">
 				<div className="text-center mb-20">
 					<h1 className="text-3xl font-bold text-center title-font text-gray-900 mb-4">
-						BANSOUの特長
+						KATAWARAの特長
 					</h1>
 					<p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
 						我々は、お客様の「自走」を全力でサポートします

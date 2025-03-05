@@ -1,27 +1,18 @@
 "use client";
 
-import { AboutSection } from "@/app/bansou/components/about-section";
-import { CaseStudies } from "@/app/bansou/components/case-studies";
-import { CTA } from "@/app/bansou/components/cta";
-import { Features } from "@/app/bansou/components/features";
-import { HeroSection } from "@/app/bansou/components/hero-section";
-import { Pricing } from "@/app/bansou/components/pricing";
-import { Problems } from "@/app/bansou/components/problems";
-import { PartnersSection } from "./components/partners-section";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Home() {
+export default function BansouRedirect() {
+	const router = useRouter();
+
+	useEffect(() => {
+		router.replace("/katawara");
+	}, [router]);
+
 	return (
-		<>
-			<main>
-				<HeroSection />
-				<Problems />
-				<AboutSection />
-				<CaseStudies />
-				<Features />
-				<PartnersSection />
-				<Pricing />
-				<CTA />
-			</main>
-		</>
+		<div className="flex items-center justify-center min-h-screen">
+			<p>リダイレクト中...</p>
+		</div>
 	);
 }

@@ -34,7 +34,7 @@ export function HeroSection() {
 					<img
 						className="object-cover object-center rounded"
 						alt="hero"
-						src="/bansou/main.jpg"
+						src="/katawara/main.jpg"
 					/>
 				</div>
 			</div>
