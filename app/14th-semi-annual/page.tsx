@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 export default function SemiAnnualEvent() {
     const [isClient, setIsClient] = useState(false);
     const [showCherryBlossoms, setShowCherryBlossoms] = useState(true);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         setIsClient(true);
@@ -82,25 +83,74 @@ export default function SemiAnnualEvent() {
 
             {/* Header */}
             <header className="bg-white shadow-sm sticky top-0 z-50">
-                <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-                    <div className="flex items-center">
-                        <img
-                            src="/logo_square.png"
-                            alt="14期半期総会ロゴ"
-                            className="w-8 h-8"
-                            aria-labelledby="logo-title"
-                        />
-                        <h1 className="ml-2 text-xl font-bold text-gray-800">14期半期総会</h1>
+                <div className="container mx-auto px-4 py-3">
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                            <img
+                                src="/logo_square.png"
+                                alt="14期半期総会ロゴ"
+                                className="w-8 h-8"
+                                aria-labelledby="logo-title"
+                            />
+                            <h1 className="ml-2 text-xl font-bold text-gray-800">14期半期総会</h1>
+                        </div>
+
+                        {/* ハンバーガーメニューボタン（モバイル用） */}
+                        <button
+                            type="button"
+                            className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition"
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+                        >
+                            <svg
+                                className="w-6 h-6 text-gray-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                {isMenuOpen ? (
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                ) : (
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                )}
+                            </svg>
+                        </button>
+
+                        {/* デスクトップ用メニュー */}
+                        <nav className="hidden lg:block">
+                            <ul className="flex space-x-6">
+                                <li><button type="button" onClick={() => document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-pink-600 transition">ホーム</button></li>
+                                <li><button type="button" onClick={() => document.querySelector('#schedule')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-pink-600 transition">スケジュール</button></li>
+                                <li><button type="button" onClick={() => document.querySelector('#activities')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-pink-600 transition">アクティビティ</button></li>
+                                <li><button type="button" onClick={() => document.querySelector('#molkky')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-pink-600 transition">モルック大会</button></li>
+                                <li><button type="button" onClick={() => document.querySelector('#information')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-600 hover:text-pink-600 transition">マップ</button></li>
+                            </ul>
+                        </nav>
                     </div>
-                    <nav>
-                        <ul className="flex space-x-6">
-                            <li><a href="#home" className="text-gray-600 hover:text-pink-600 transition">ホーム</a></li>
-                            <li><a href="#schedule" className="text-gray-600 hover:text-pink-600 transition">スケジュール</a></li>
-                            <li><a href="#activities" className="text-gray-600 hover:text-pink-600 transition">アクティビティ</a></li>
-                            <li><a href="#molkky" className="text-gray-600 hover:text-pink-600 transition">モルック大会</a></li>
-                            <li><a href="#information" className="text-gray-600 hover:text-pink-600 transition">マップ</a></li>
-                        </ul>
-                    </nav>
+
+                    {/* モバイル用メニュー */}
+                    <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} pt-4`}>
+                        <nav>
+                            <ul className="flex flex-col space-y-4">
+                                <li><button type="button" onClick={() => { document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }} className="w-full text-left text-gray-600 hover:text-pink-600 transition py-2">ホーム</button></li>
+                                <li><button type="button" onClick={() => { document.querySelector('#schedule')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }} className="w-full text-left text-gray-600 hover:text-pink-600 transition py-2">スケジュール</button></li>
+                                <li><button type="button" onClick={() => { document.querySelector('#activities')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }} className="w-full text-left text-gray-600 hover:text-pink-600 transition py-2">アクティビティ</button></li>
+                                <li><button type="button" onClick={() => { document.querySelector('#molkky')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }} className="w-full text-left text-gray-600 hover:text-pink-600 transition py-2">モルック大会</button></li>
+                                <li><button type="button" onClick={() => { document.querySelector('#information')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }} className="w-full text-left text-gray-600 hover:text-pink-600 transition py-2">マップ</button></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </header>
 
