@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     description: "",
     openGraph: {
         type: "website",
-        title: "KATAWARA | 現役エンジニアが伴走してくれるサービス",
+        title: "14期半期総会",
         description:
-            "KATAWARAならプロの現役エンジニアに気軽にIT関連のあらゆる相談を行えるサービスです。CTOとして、教育担当者として、IT導入管理部門として、お客様の「自走」にコミットします。",
+            "14期半期総会のイベントサイトです。",
         images: [
             {
-                url: "/katawara/ogp-katawara.png",
-                width: 1472,
-                height: 832,
+                url: "/14th-semi-annual/hero-bg.png",
+                width: 1920,
+                height: 1080,
             },
         ],
     },

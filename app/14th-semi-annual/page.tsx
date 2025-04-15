@@ -2,30 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-interface TimelineItemProps {
-    id: string;
-    time: string;
-    title: string;
-    description?: string;
-    icon: React.ComponentType;
-}
-
-const TimelineItem = ({ time, title, description, icon: Icon }: TimelineItemProps) => (
-    <li className="timeline-item relative flex mb-6 pl-12">
-        <div className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center" aria-hidden="true">
-            <Icon />
-        </div>
-        <div className="flex-1">
-            <div className="font-semibold text-gray-900">{time}</div>
-            <div className="text-lg font-bold text-gray-900">{title}</div>
-            {description && <div className="text-gray-600">{description}</div>}
-        </div>
-    </li>
-);
-
 export default function SemiAnnualEvent() {
-    const [activeTab, setActiveTab] = useState('morning');
     const [isClient, setIsClient] = useState(false);
+    const [showCherryBlossoms, setShowCherryBlossoms] = useState(true);
 
     useEffect(() => {
         setIsClient(true);
@@ -34,9 +13,46 @@ export default function SemiAnnualEvent() {
     useEffect(() => {
         if (!isClient) return;
 
+        // ヒーローセクションの表示状態を監視
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    const cherryBlossoms = document.getElementById('cherry-blossoms');
+                    // ヒーローセクションが画面外に出たとき
+                    if (!entry.isIntersecting) {
+                        if (cherryBlossoms) {
+                            cherryBlossoms.classList.add('fade-out');
+                        }
+                        setTimeout(() => {
+                            setShowCherryBlossoms(false);
+                        }, 1500);
+                    } else {
+                        // ヒーローセクションが画面内に入ったとき
+                        if (cherryBlossoms) {
+                            cherryBlossoms.classList.remove('fade-out');
+                        }
+                        setShowCherryBlossoms(true);
+                    }
+                }
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '-50% 0px 0px 0px' // 画面の中央付近でトリガー
+            }
+        );
+
+        // ヒーローセクションを監視
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+            observer.observe(heroSection);
+        }
+
         const createCherryBlossom = () => {
             const cherryBlossoms = document.getElementById('cherry-blossoms');
-            if (!cherryBlossoms) return;
+            if (!cherryBlossoms || !showCherryBlossoms) return;
+
+            // 要素が作成される前にフェードアウトクラスを削除
+            cherryBlossoms.classList.remove('fade-out');
 
             const blossom = document.createElement('div');
             blossom.className = 'cherry-blossom';
@@ -50,23 +66,30 @@ export default function SemiAnnualEvent() {
         };
 
         const interval = setInterval(createCherryBlossom, 300);
-        return () => clearInterval(interval);
-    }, [isClient]);
+
+        return () => {
+            clearInterval(interval);
+            observer.disconnect();
+        };
+    }, [isClient, showCherryBlossoms]);
 
     const content = (
         <>
             {/* Cherry Blossom Animation */}
-            <div id="cherry-blossoms" />
+            {showCherryBlossoms && (
+                <div id="cherry-blossoms" className={showCherryBlossoms ? '' : 'fade-out'} />
+            )}
 
             {/* Header */}
             <header className="bg-white shadow-sm sticky top-0 z-50">
                 <div className="container mx-auto px-4 py-3 flex justify-between items-center">
                     <div className="flex items-center">
-                        <svg className="w-8 h-8 text-pink-600" fill="currentColor" viewBox="0 0 20 20" aria-labelledby="logo-title" role="img">
-                            <title id="logo-title">14期半期総会</title>
-                            <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd" />
-                            <path fillRule="evenodd" d="M10 4a1 1 0 100 2 1 1 0 000-2zm3.536.464a1 1 0 10-1.414 1.414 1 1 0 001.414-1.414zm-7.072 0a1 1 0 011.414 0 1 1 0 010 1.414 1 1 0 01-1.414-1.414zM10 14a1 1 0 100 2 1 1 0 000-2zm3.536.464a1 1 0 10-1.414 1.414 1 1 0 001.414-1.414zm-7.072 0a1 1 0 011.414 0 1 1 0 010 1.414 1 1 0 01-1.414-1.414zM4.464 10a1 1 0 102 0 1 1 0 00-2 0z" clipRule="evenodd" />
-                        </svg>
+                        <img
+                            src="/logo_square.png"
+                            alt="14期半期総会ロゴ"
+                            className="w-8 h-8"
+                            aria-labelledby="logo-title"
+                        />
                         <h1 className="ml-2 text-xl font-bold text-gray-800">14期半期総会</h1>
                     </div>
                     <nav>
@@ -75,22 +98,28 @@ export default function SemiAnnualEvent() {
                             <li><a href="#schedule" className="text-gray-600 hover:text-pink-600 transition">スケジュール</a></li>
                             <li><a href="#activities" className="text-gray-600 hover:text-pink-600 transition">アクティビティ</a></li>
                             <li><a href="#molkky" className="text-gray-600 hover:text-pink-600 transition">モルック大会</a></li>
-                            <li><a href="#information" className="text-gray-600 hover:text-pink-600 transition">開催情報</a></li>
+                            <li><a href="#information" className="text-gray-600 hover:text-pink-600 transition">マップ</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
 
             {/* Hero Section */}
-            <section id="home" className="heroPattern relative overflow-hidden">
-                <div className="container mx-auto px-4 py-20 flex flex-col items-center">
+            <section id="home" className="relative overflow-hidden min-h-screen flex items-center" style={{
+                backgroundImage: 'url("/14th-semi-annual/hero-bg.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}>
+                <div className="absolute inset-0 bg-black bg-opacity-50" /> {/* オーバーレイ */}
+                <div className="container mx-auto px-4 py-20 flex flex-col items-center relative z-10">
                     <div className="absolute top-0 right-0">
                         <svg width="300" height="300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
                             className="opacity-20" aria-label="装飾的な背景パターン" />
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-6">ここ福岡で、<span
-                        className="text-pink-600">春</span>が来た。</h2>
-                    <p className="text-lg text-center text-gray-600 max-w-2xl mb-10">
+                    <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-6">ここ福岡で、<span
+                        className="text-pink-300">春</span>が来た。</h2>
+                    <p className="text-lg text-center text-gray-200 max-w-2xl mb-10">
                         春風に背中を押されて、再び一歩を踏み出す。<br />
                         仲間とつながる今日が、明日への力になる。<br />
                         胸を張って、また新たな挑戦を迎えよう。</p>
@@ -104,7 +133,7 @@ export default function SemiAnnualEvent() {
                             モルック大会を見る
                         </a>
                     </div>
-                    <div className="mt-16 bg-white p-4 rounded-lg shadow-lg inline-flex items-center">
+                    <div className="mt-16 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg inline-flex items-center">
                         <div className="bg-pink-100 rounded-full p-3 mr-4">
                             <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-labelledby="calendar-icon">
                                 <title id="calendar-icon">カレンダーアイコン</title>
@@ -704,47 +733,9 @@ export default function SemiAnnualEvent() {
             <section id="information" className="py-16 bg-pink-50">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">開催情報</h2>
-                        <p className="text-center text-gray-600 mb-12">イベントに関する詳細情報</p>
+                        <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">マップ</h2>
+                        <p className="text-center text-gray-600 mb-12">移動する際のマップです。</p>
 
-                        <div className="bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl shadow-lg overflow-hidden mb-10">
-                            <div className="p-8">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div>
-                                        <div className="flex items-start mb-6">
-                                            <div className="bg-pink-200 rounded-full p-3 mr-4">
-                                                <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-labelledby="calendar-icon">
-                                                    <title id="calendar-icon">カレンダーアイコン</title>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <h3 className="font-bold text-lg text-gray-800">開催日時</h3>
-                                                <p className="text-gray-600">2025年4月25日（金）9:30 - 21:00頃</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div className="flex items-start mb-6">
-                                            <div className="bg-pink-200 rounded-full p-3 mr-4">
-                                                <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-labelledby="location-icon">
-                                                    <title id="location-icon">位置情報アイコン</title>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <h3 className="font-bold text-lg text-gray-800">開催場所</h3>
-                                                <p className="text-gray-600">福岡オフィス（午前・午後）</p>
-                                                <p className="text-gray-600">冷泉公園（モルック大会）</p>
-                                                <p className="text-gray-600">博多水炊き大和（懇親会）</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <h3 className="text-2xl font-bold text-gray-800 mb-4">冷泉公園</h3>
                         <div className="bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl shadow-lg overflow-hidden mb-10">
                             <div className="p-8">
@@ -802,7 +793,7 @@ export default function SemiAnnualEvent() {
                                         <svg className="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-labelledby="camera-icon">
                                             <title id="camera-icon">カメラアイコン</title>
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                         </svg>
                                     </div>
                                     <div>
