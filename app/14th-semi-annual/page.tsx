@@ -167,12 +167,17 @@ export default function SemiAnnualEvent() {
                         <svg width="300" height="300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
                             className="opacity-20" aria-label="装飾的な背景パターン" />
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-6">ここ福岡で、<span
-                        className="text-pink-300">春</span>が来た。</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-6">
+                        エミシスに、
+                        <span className="text-pink-300">咲け。</span>
+                        <br />
+                        わたしらしさと、チームのチカラ。
+                    </h2>
                     <p className="text-lg text-center text-gray-200 max-w-2xl mb-10">
-                        春風に背中を押されて、再び一歩を踏み出す。<br />
-                        仲間とつながる今日が、明日への力になる。<br />
-                        胸を張って、また新たな挑戦を迎えよう。</p>
+                        大切なのは、自分を知ること。
+                        <br className="sm:hidden" />
+                        そして、仲間を信じること。
+                    </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a href="#schedule"
                             className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 text-center">
@@ -202,7 +207,7 @@ export default function SemiAnnualEvent() {
             <section id="schedule" className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">イベントスケジュール</h2>
-                    <p className="text-center text-gray-600 mb-12">一日を通して様々なアクティビティをお楽しみいただけます</p>
+                    <p className="text-center text-gray-600 mb-12">一日のスケジュールをご確認ください。</p>
 
                     <div className="max-w-3xl mx-auto">
                         <div className="timeline-item relative flex mb-6 pl-12">
@@ -295,7 +300,7 @@ export default function SemiAnnualEvent() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
+                            <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
                                     <h3 className="font-bold text-lg text-gray-800">休憩</h3>
                                     <span className="text-sm text-pink-600 font-medium">11:05 - 11:10 (5分)</span>
@@ -328,7 +333,7 @@ export default function SemiAnnualEvent() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
+                            <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
                                     <h3 className="font-bold text-lg text-gray-800">昼休憩</h3>
                                     <span className="text-sm text-pink-600 font-medium">12:10 - 13:10 (60分)</span>
@@ -361,7 +366,7 @@ export default function SemiAnnualEvent() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
+                            <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
                                     <h3 className="font-bold text-lg text-gray-800">休憩</h3>
                                     <span className="text-sm text-pink-600 font-medium">14:10 - 14:20 (10分)</span>
@@ -411,7 +416,7 @@ export default function SemiAnnualEvent() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
+                            <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
                                     <h3 className="font-bold text-lg text-gray-800">移動準備・休憩</h3>
                                     <span className="text-sm text-pink-600 font-medium">15:30 - 15:40 (10分)</span>
@@ -445,7 +450,7 @@ export default function SemiAnnualEvent() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
+                            <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
                                     <h3 className="font-bold text-lg text-gray-800">移動</h3>
                                     <span className="text-sm text-pink-600 font-medium">18:00 - 18:30 (30分)</span>
@@ -477,7 +482,7 @@ export default function SemiAnnualEvent() {
             <section id="activities" className="py-16 bg-pink-50">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">アクティビティ</h2>
-                    <p className="text-center text-gray-600 mb-12">春の訪れを感じながら楽しめる様々なアクティビティをご用意しています</p>
+                    <p className="text-center text-gray-600 mb-12">ワークやゲームで楽しみましょう！</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div className="event-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
@@ -839,12 +844,12 @@ export default function SemiAnnualEvent() {
                         <div className="bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl shadow-lg overflow-hidden mb-16">
                             <div className="p-8">
                                 <div className="flex items-center mb-6">
-                                    <div className="bg-pink-200 rounded-full p-4 mr-6">
-                                        <svg className="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-labelledby="camera-icon">
-                                            <title id="camera-icon">カメラアイコン</title>
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                                        </svg>
+                                    <div className="bg-pink-200 rounded-full p-1 mr-6 overflow-hidden" style={{ width: '80px', height: '80px' }}>
+                                        <img
+                                            src="/14th-semi-annual/yap.png"
+                                            alt="Yapさんのプロフィール写真"
+                                            className="w-full h-full object-cover rounded-full"
+                                        />
                                     </div>
                                     <div>
                                         <h3 className="text-2xl font-bold text-gray-800 mb-1">Yapさん</h3>
@@ -887,7 +892,7 @@ export default function SemiAnnualEvent() {
                                                 <title id="check-icon-5">チェックマーク</title>
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                             </svg>
-                                            <span>Yapさんがメインで撮影しますが、皆さんが撮った写真も大歓迎です！（フォルダは後日用意します）</span>
+                                            <span>Yapさんがメインで撮影しますが、皆さんが撮った写真も大歓迎です！（<a href="https://drive.google.com/drive/folders/1VaHZuemFSP17Rk2_sW4Y1zorUpHIyI4Q?usp=drive_link" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:text-pink-700 underline">こちらのフォルダ</a>にアップロードしてください）</span>
                                         </li>
                                     </ul>
                                     <p className="text-center text-gray-800 font-medium mt-6">みんなで総会の思い出を残しましょう！</p>
