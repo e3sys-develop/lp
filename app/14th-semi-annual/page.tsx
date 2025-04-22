@@ -285,10 +285,10 @@ export default function SemiAnnualEvent() {
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="font-bold text-lg text-gray-800">上期振り返り＆下期の見込み</h3>
+                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（前半）</h3>
                                     <span className="text-sm text-pink-600 font-medium">10:05 - 11:05 (60分)</span>
                                 </div>
-                                <p className="text-gray-600">役員チームより</p>
+                                <p className="text-gray-600">15分 × 4案件</p>
                             </div>
                         </div>
 
@@ -318,7 +318,7 @@ export default function SemiAnnualEvent() {
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（前半）</h3>
+                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（後半）</h3>
                                     <span className="text-sm text-pink-600 font-medium">11:10 - 12:10 (60分)</span>
                                 </div>
                                 <p className="text-gray-600">15分 × 4案件</p>
@@ -351,10 +351,10 @@ export default function SemiAnnualEvent() {
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（後半）</h3>
+                                    <h3 className="font-bold text-lg text-gray-800">上期振り返り＆下期の見込み</h3>
                                     <span className="text-sm text-pink-600 font-medium">13:10 - 14:10 (60分)</span>
                                 </div>
-                                <p className="text-gray-600">15分 × 4案件</p>
+                                <p className="text-gray-600">役員チームより</p>
                             </div>
                         </div>
 
