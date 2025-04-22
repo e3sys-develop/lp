@@ -214,8 +214,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>時計アイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <title>開会式アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
@@ -231,8 +231,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>メッセージアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                    <title>誕生日アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
@@ -247,8 +247,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>アイスブレイクアイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
@@ -263,8 +263,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>ミーティングアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    <title>辞令・表彰アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
@@ -285,10 +285,10 @@ export default function SemiAnnualEvent() {
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="font-bold text-lg text-gray-800">上期振り返り＆下期の見込み</h3>
+                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（前半）</h3>
                                     <span className="text-sm text-pink-600 font-medium">10:05 - 11:05 (60分)</span>
                                 </div>
-                                <p className="text-gray-600">役員チームより</p>
+                                <p className="text-gray-600">15分 × 4案件</p>
                             </div>
                         </div>
 
@@ -296,8 +296,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>休憩アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
@@ -312,13 +312,13 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>本アイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    <title>プレゼンテーションアイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.057M13 21l5-5 5 5M8 4h.01M12 4h.01M16 4h.01M8 8h.01M12 8h.01M16 8h.01" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（前半）</h3>
+                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（後半）</h3>
                                     <span className="text-sm text-pink-600 font-medium">11:10 - 12:10 (60分)</span>
                                 </div>
                                 <p className="text-gray-600">15分 × 4案件</p>
@@ -329,8 +329,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>休憩アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
@@ -351,10 +351,10 @@ export default function SemiAnnualEvent() {
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
                                 <div className="flex justify-between items-start mb-1">
-                                    <h3 className="font-bold text-lg text-gray-800">現場紹介LT（後半）</h3>
+                                    <h3 className="font-bold text-lg text-gray-800">上期振り返り＆下期の見込み</h3>
                                     <span className="text-sm text-pink-600 font-medium">13:10 - 14:10 (60分)</span>
                                 </div>
-                                <p className="text-gray-600">15分 × 4案件</p>
+                                <p className="text-gray-600">役員チームより</p>
                             </div>
                         </div>
 
@@ -362,8 +362,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>休憩アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
@@ -378,8 +378,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>ワークアイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
@@ -395,7 +395,7 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>アナウンスアイコン</title>
+                                    <title>お知らせアイコン</title>
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
                                 </svg>
                             </div>
@@ -412,8 +412,9 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>移動アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
@@ -429,8 +430,8 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>モルック大会アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-pink-50 rounded-lg p-4 shadow-sm">
@@ -446,8 +447,9 @@ export default function SemiAnnualEvent() {
                             <div
                                 className="absolute left-0 bg-pink-100 rounded-full w-10 h-10 flex items-center justify-center">
                                 <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <title>イベントアイコン</title>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <title>移動アイコン</title>
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
                             <div className="flex-grow bg-gray-50 rounded-lg p-4 shadow-sm">
