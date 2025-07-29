@@ -8,7 +8,13 @@ export default function NarabanPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex-shrink-0 flex items-center">
-                            <span className="text-2xl font-bold text-blue-600">NARABAN</span>
+                            <Image
+                                src="/naraban/logo.svg"
+                                alt="NARABAN"
+                                width={160}
+                                height={160}
+                                className="h-16 w-auto"
+                            />
                         </div>
                         <div className="hidden md:flex items-center space-x-8">
                             <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -30,21 +36,8 @@ export default function NarabanPage() {
             </nav>
 
             {/* ファーストビュー（結＋プレスリリース冒頭） */}
-            <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+            <section className="mt-16 py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* プレスリリース */}
-                    <div className="press-release">
-                        <h2 className="text-xl font-bold text-blue-800 mb-2">
-                            新サービス「NARABAN」リリースのお知らせ
-                        </h2>
-                        <p className="text-blue-700 mb-2">
-                            ～整理券発行をもっと簡単に、もっとスムーズに～
-                        </p>
-                        <p className="text-gray-700">
-                            2025年1月XX日　株式会社エミシス（本社：東京都渋谷区、代表取締役：XXX）は、整理券管理の課題を解決する新サービス「NARABAN」を本日よりベータ版無料提供開始いたします。
-                        </p>
-                    </div>
-
                     {/* ヒーローセクション */}
                     <div className="flex flex-col lg:flex-row items-center gap-8">
                         <div className="lg:w-1/2">
@@ -78,7 +71,8 @@ export default function NarabanPage() {
                         </div>
                         <div className="lg:w-1/2 space-y-6">
                             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                                もう"整理券待ち"のために並ばない
+                                もう"整理券のため"に<br />
+                                並ばない
                             </h1>
                             <p className="text-xl text-gray-600 leading-relaxed">
                                 好きな時間に行ける。あなたの"来場時間"と"デジタル特典券"をスマホにお届け。
