@@ -126,8 +126,9 @@ function NarabanPageContent() {
                                     <Star className="w-4 h-4 mr-2" />
                                     イベント運営を革新
                                 </div>
-                                <h1 className="text-5xl lg:text-6xl font-bold text-text-dark leading-tight">
-                                    整理券発行/管理の<br />
+                                <h1 className="text-5xl lg:text-6xl font-bold text-text-dark">
+                                    整理券発行、<br />
+                                    管理の
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">
                                         新常識
                                     </span>
