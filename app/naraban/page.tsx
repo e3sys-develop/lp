@@ -201,7 +201,7 @@ function NarabanPageContent() {
                         <div className="inline-block bg-gradient-to-r from-bg-muted to-primary/10 border-2 border-primary/20 rounded-2xl p-8 max-w-2xl">
                             <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
                             <p className="text-2xl font-bold text-primary-dark mb-2">
-                                NARABANなら、これらの課題をすべて解決！
+                                narabanなら、これらの課題をすべて解決！
                             </p>
                             <p className="text-primary-dark">
                                 運営効率化と顧客満足度向上を同時実現
@@ -216,7 +216,7 @@ function NarabanPageContent() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-text-dark mb-4">
-                            NARABANが選ばれる理由
+                            narabanが選ばれる理由
                         </h2>
                         <p className="text-xl text-text-light">革新的な機能で、イベント運営を変革します</p>
                     </div>
@@ -496,7 +496,7 @@ function NarabanPageContent() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 mb-8">
                         <blockquote className="text-2xl text-white font-medium leading-relaxed">
-                            「整理券も特典券も、もう紙に頼らない。NARABANでイベント運営を革新し、運営効率と顧客満足度を向上させましょう。」
+                            「整理券も特典券も、もう紙に頼らない。narabanでイベント運営を革新し、運営効率と顧客満足度を向上させましょう。」
                         </blockquote>
                     </div>
 
@@ -532,7 +532,7 @@ function NarabanPageContent() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-3 gap-12">
                         <div>
-                            <div className="text-2xl font-bold text-white mb-4">NARABAN</div>
+                            <div className="text-2xl font-bold text-white mb-4">naraban</div>
                             <p className="text-text-light mb-6 leading-relaxed">
                                 "WHACK!WHACK!し続ける"人と環境をつくる
                             </p>
@@ -572,7 +572,7 @@ function NarabanPageContent() {
                             <div className="w-32 h-32 bg-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4">
                                 <img
                                     src="https://placehold.jp/112x112.png"
-                                    alt="NARABAN QR Code"
+                                    alt="naraban QR Code"
                                     className="w-28 h-28 rounded-xl object-cover"
                                 />
                             </div>
@@ -581,7 +581,7 @@ function NarabanPageContent() {
                     </div>
 
                     <div className="text-center mt-12 pt-8 border-t border-border-gray">
-                        <p className="text-text-light">&copy; 2025 NARABAN. All Rights Reserved.</p>
+                        <p className="text-text-light">&copy; 2025 naraban. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
