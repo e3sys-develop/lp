@@ -1,613 +1,583 @@
-import Image from "next/image";
+"use client"
+
+import React, { useState } from 'react';
+import {
+    Menu,
+    X,
+    Zap,
+    Smartphone,
+    BarChart3,
+    Heart,
+    DollarSign,
+    TrendingUp,
+    Shield,
+    Music,
+    Handshake,
+    ShoppingBag,
+    Coffee,
+    ChevronDown,
+    ChevronUp,
+    Star,
+    Users,
+    Clock,
+    CheckCircle
+} from 'lucide-react';
 
 export default function NarabanPage() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+    const toggleFaq = (index: number) => {
+        setOpenFaq(openFaq === index ? null : index);
+    };
+
+    const faqData = [
+        {
+            q: "会員登録は必要ですか？",
+            a: "いいえ。Webからワンクリックで整理券・特典券を取得できます。"
+        },
+        {
+            q: "発行上限は設定できますか？",
+            a: "はい。イベントごとに運営者が上限数を自由に設定可能です。"
+        },
+        {
+            q: "キャンセルはできますか？",
+            a: "はい。管理画面からいつでもキャンセルできます。"
+        },
+        {
+            q: "データはどこまで見られますか？",
+            a: "発券数・利用数・キャンセル数など、リアルタイムで詳細把握できます。"
+        }
+    ];
+
     return (
-        <div className="min-h-screen bg-gray-50">
-            {/* ナビゲーション */}
-            <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+        <div className="min-h-screen bg-white">
+            {/* Navigation */}
+            <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-lg z-50 border-b border-gray-100 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-16">
+                    <div className="flex justify-between items-center h-16">
                         <div className="flex-shrink-0 flex items-center">
-                            <Image
-                                src="/naraban/logo.svg"
-                                alt="NARABAN"
-                                width={160}
-                                height={160}
-                                className="h-16 w-auto"
-                            />
+                            <a href="/" className="flex items-center space-x-2">
+                                <span>
+                                    <img src="/naraban/logo.svg" alt="ナラバン ロゴ" className="h-16 w-auto" />
+                                </span>
+                            </a>
                         </div>
+
+                        {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">
-                            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                                 機能
                             </a>
-                            <a href="#benefits" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <a href="#benefits" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                                 メリット
                             </a>
-
-                            <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <a href="#faq" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                                 FAQ
                             </a>
-                            <a href="#signup" className="btn btn-primary">
+                            <a href="#signup" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                                 無料ベータ版
                             </a>
                         </div>
+
+                        {/* Mobile menu button */}
+                        <div className="md:hidden">
+                            <button
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                            >
+                                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                            </button>
+                        </div>
                     </div>
+
+                    {/* Mobile Navigation */}
+                    {isMenuOpen && (
+                        <div className="md:hidden bg-white border-t border-gray-100 py-4">
+                            <div className="flex flex-col space-y-4">
+                                <a href="#features" className="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-4">
+                                    機能
+                                </a>
+                                <a href="#benefits" className="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-4">
+                                    メリット
+                                </a>
+                                <a href="#faq" className="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-4">
+                                    FAQ
+                                </a>
+                                <a href="#signup" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-200 mx-4 text-center">
+                                    無料ベータ版
+                                </a>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </nav>
 
-            {/* ファーストビュー（結＋プレスリリース冒頭） */}
-            <section className="mt-16 py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+            {/* Hero Section */}
+            <section className="mt-16 pt-16 pb-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {/* ヒーローセクション */}
-                    <div className="flex flex-col lg:flex-row items-center gap-8">
-                        <div className="lg:w-1/2">
-                            <div className="relative">
-                                {/* 背景の混雑イメージ */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-red-400 to-orange-500 rounded-lg opacity-20"></div>
-                                <div className="relative bg-white rounded-lg shadow-lg p-6">
-                                    <div className="grid grid-cols-3 gap-2 mb-4">
-                                        {/* 混雑を表現する小さな円 */}
-                                        {Array.from({ length: 9 }).map((_, i) => (
-                                            <div key={i} className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
-                                                <span className="text-xs">👤</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    {/* スマホ画面のモック */}
-                                    <div className="bg-gray-900 rounded-lg p-4 mx-auto w-48">
-                                        <div className="bg-white rounded-lg p-3">
-                                            <div className="text-center">
-                                                <div className="w-16 h-16 bg-blue-500 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                                    <span className="text-white text-2xl">🎫</span>
-                                                </div>
-                                                <div className="text-xs text-gray-600 mb-2">NARABAN</div>
-                                                <div className="text-xs font-bold">整理券 #001</div>
-                                                <div className="text-xs text-gray-500">入場時間: 14:00</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-8">
+                            <div className="space-y-6">
+                                <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                                    <Star className="w-4 h-4 mr-2" />
+                                    イベント運営を革新
                                 </div>
+                                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                                    整理券発行/管理の<br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                                        新常識
+                                    </span>
+                                </h1>
+                                <p className="text-xl text-gray-600 leading-relaxed">
+                                    整理券の発行・管理を、すべてスマホで完結。<br />
+                                    運営効率化と顧客満足度向上を実現。
+                                </p>
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <a href="#signup" className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center">
+                                    無料ベータ版を今すぐ試す
+                                    <div className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">→</div>
+                                </a>
+                                <a href="#features" className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-xl transition-all duration-200 font-semibold text-center">
+                                    機能を見る
+                                </a>
                             </div>
                         </div>
-                        <div className="lg:w-1/2 space-y-6">
-                            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                                もう"整理券のため"に<br />
-                                並ばない
-                            </h1>
-                            <p className="text-xl text-gray-600 leading-relaxed">
-                                好きな時間に行ける。あなたの"来場時間"と"デジタル特典券"をスマホにお届け。
-                            </p>
-                            <a href="#signup" className="btn btn-primary btn-lg">
-                                無料ベータ版を今すぐ試す
-                            </a>
+
+                        <div className="relative">
+                            <img src="/naraban/hero.png" alt="ナラバン ヒーローイメージ" className="w-full h-full object-cover rounded-3xl" />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 共感セクション（起） */}
-            <section className="py-16 bg-white">
+            {/* Problem Section */}
+            <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            こんな"困った"ありませんか？
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                            イベント運営でこんな<span className="text-red-600">"課題"</span>ありませんか？
                         </h2>
+                        <p className="text-xl text-gray-600">多くの運営者が直面している課題を解決します</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">😰</span>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">人気イベントなのに、長蛇の列で並びっぱなし…</h3>
-                                    <div className="mt-3 bg-gray-100 rounded-lg p-3">
-                                        <div className="flex space-x-1">
-                                            {Array.from({ length: 8 }).map((_, i) => (
-                                                <div key={i} className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
-                                                    <span className="text-xs">👤</span>
-                                                </div>
-                                            ))}
-                                        </div>
+                    <div className="grid grid-cols-4 gap-6 mb-12">
+                        {[
+                            {
+                                icon: "😰",
+                                title: "整理券配布の列が<br />長く、運営が大変…"
+                            },
+                            {
+                                icon: "📄",
+                                title: "紙の整理券の印刷・<br />管理コストが高い…"
+                            },
+                            {
+                                icon: "🎫",
+                                title: "不正利用や<br />偽造のリスクも…"
+                            },
+                            {
+                                icon: "📊",
+                                title: "発券数や利用状況の<br />集計に時間がかかる…"
+                            }
+                        ].map((problem, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 group hover:-translate-y-1">
+                                <div className="text-center">
+                                    <div className="w-20 h-20 bg-red-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <span className="text-3xl">{problem.icon}</span>
                                     </div>
+                                    <h3 className="font-bold text-gray-900 text-xl leading-relaxed" dangerouslySetInnerHTML={{ __html: problem.title }}></h3>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">📄</span>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">紙の整理券をもらっても、実際の入場時間がわからず不安</h3>
-                                    <div className="mt-3 bg-gray-100 rounded-lg p-3">
-                                        <div className="bg-white rounded border-2 border-dashed border-gray-300 p-2 text-center">
-                                            <span className="text-xs text-gray-500">整理券 #123</span>
-                                            <div className="text-xs text-gray-400">入場時間: ???</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">🎫</span>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">特典会では紙の特典券がかさばり、紛失や破損が心配</h3>
-                                    <div className="mt-3 bg-gray-100 rounded-lg p-3">
-                                        <div className="flex space-x-2">
-                                            {Array.from({ length: 3 }).map((_, i) => (
-                                                <div key={i} className="w-8 h-8 bg-yellow-200 rounded border border-yellow-300 flex items-center justify-center">
-                                                    <span className="text-xs">🎁</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">📊</span>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">発券数や利用状況の集計に時間がかかり、事後処理が大変</h3>
-                                    <div className="mt-3 bg-gray-100 rounded-lg p-3">
-                                        <div className="bg-white rounded p-2">
-                                            <div className="text-xs text-gray-500 mb-1">手作業集計中...</div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div className="bg-blue-600 h-2 rounded-full" style={{ width: '30%' }}></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
 
                     <div className="text-center">
-                        <div className="inline-block bg-green-50 border border-green-200 rounded-lg p-6">
-                            <p className="text-xl font-bold text-green-800">
-                                NARABANなら、すべてスマホ完結でストレスフリー！
+                        <div className="inline-block bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8 max-w-2xl">
+                            <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                            <p className="text-2xl font-bold text-green-800 mb-2">
+                                NARABANなら、これらの課題をすべて解決！
+                            </p>
+                            <p className="text-green-700">
+                                運営効率化と顧客満足度向上を同時実現
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* NARABANが選ばれる理由（承） */}
-            <section className="py-16 bg-gray-50">
+            {/* Features Section */}
+            <section id="features" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
                             NARABANが選ばれる理由
                         </h2>
+                        <p className="text-xl text-gray-600">革新的な機能で、イベント運営を変革します</p>
                     </div>
 
-                    <div className="feature-grid">
-                        <div className="card">
-                            <div className="text-center mb-4">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">⚡</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">簡単・柔軟な整理券発行</h3>
-                                <p className="text-gray-600 mb-4">
-                                    イベントごとに定員や発行ルールを自由に設定。ボタン操作で即時発行。
-                                </p>
-                                <div className="bg-gray-50 rounded-lg p-4">
-                                    <div className="bg-white rounded border p-3 text-center">
-                                        <div className="text-sm font-bold text-blue-600 mb-1">イベント設定</div>
-                                        <div className="text-xs text-gray-500">定員: 100名</div>
-                                        <div className="text-xs text-gray-500">発行開始: 10:00</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="text-center mb-4">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">📱</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">デジタル整理券＆特典券</h3>
-                                <p className="text-gray-600 mb-4">
-                                    QR/バーコード発行で紙不要。特典会の券もアプリで一元管理。
-                                </p>
-                                <div className="bg-gray-50 rounded-lg p-4">
-                                    <div className="bg-gray-900 rounded-lg p-3 mx-auto w-32">
-                                        <div className="bg-white rounded p-2 text-center">
-                                            <div className="w-8 h-8 bg-blue-500 rounded mx-auto mb-1 flex items-center justify-center">
-                                                <span className="text-white text-xs">🎫</span>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                icon: <Zap className="w-8 h-8 text-blue-600" />,
+                                title: "簡単・柔軟な<br />整理券発行",
+                                description: "イベントごとに定員や発行ルールを自由に設定。ボタン操作で即時発行。",
+                                visual: (
+                                    <div className="bg-blue-50 rounded-lg p-4">
+                                        <div className="bg-white rounded-lg border p-3 text-center">
+                                            <div className="text-sm font-bold text-blue-600 mb-2">イベント設定</div>
+                                            <div className="text-xs text-gray-600">定員: 100名</div>
+                                            <div className="text-xs text-gray-600">発行開始: 10:00</div>
+                                            <div className="mt-2 bg-blue-600 text-white rounded px-3 py-1 text-xs">
+                                                設定完了
                                             </div>
-                                            <div className="text-xs font-bold">整理券 #001</div>
-                                            <div className="text-xs text-gray-500">QR Code</div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="text-center mb-4">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">📊</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">リアルタイム運営ダッシュボード</h3>
-                                <p className="text-gray-600 mb-4">
-                                    発券・利用状況を即時把握。混雑や残券を瞬時に確認し最適誘導。
-                                </p>
-                                <div className="bg-gray-50 rounded-lg p-4">
-                                    <div className="bg-white rounded border p-3">
-                                        <div className="text-sm font-bold mb-2">発券状況</div>
-                                        <div className="flex justify-between text-xs mb-1">
-                                            <span>発券済み</span>
-                                            <span className="text-blue-600 font-bold">85/100</span>
-                                        </div>
-                                        <div className="w-full bg-gray-200 rounded-full h-2">
-                                            <div className="bg-blue-600 h-2 rounded-full" style={{ width: '85%' }}></div>
+                                )
+                            },
+                            {
+                                icon: <Smartphone className="w-8 h-8 text-purple-600" />,
+                                title: "デジタル整理券＆<br />特典券",
+                                description: "QR/バーコード発行で紙不要。特典会の券もアプリで一元管理。",
+                                visual: (
+                                    <div className="bg-purple-50 rounded-lg p-4">
+                                        <div className="bg-gray-900 rounded-lg p-3 mx-auto w-24">
+                                            <div className="bg-white rounded p-2 text-center">
+                                                <div className="w-6 h-6 bg-purple-500 rounded mx-auto mb-1 flex items-center justify-center">
+                                                    <Smartphone className="w-3 h-3 text-white" />
+                                                </div>
+                                                <div className="text-xs font-bold">券 #001</div>
+                                                <div className="text-xs text-gray-500">QR</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="text-center mb-4">
-                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-2xl">🎉</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">ファン体験を最大化</h3>
-                                <p className="text-gray-600 mb-4">
-                                    来場時間通知とリマインダーで、待ち時間を有効活用。安心・快適。
-                                </p>
-                                <div className="bg-gray-50 rounded-lg p-4">
-                                    <div className="bg-blue-50 rounded border border-blue-200 p-3">
-                                        <div className="text-sm font-bold text-blue-800 mb-1">🔔 通知</div>
-                                        <div className="text-xs text-blue-700">入場時間まで30分です</div>
-                                        <div className="text-xs text-blue-600">会場: メインホール</div>
+                                )
+                            },
+                            {
+                                icon: <BarChart3 className="w-8 h-8 text-green-600" />,
+                                title: "リアルタイム運営<br />ダッシュボード",
+                                description: "発券・利用状況を即時把握。混雑や残券を瞬時に確認し最適誘導。",
+                                visual: (
+                                    <div className="bg-green-50 rounded-lg p-4">
+                                        <div className="bg-white rounded-lg border p-3">
+                                            <div className="text-sm font-bold mb-2">発券状況</div>
+                                            <div className="flex justify-between text-xs mb-1">
+                                                <span>発券済み</span>
+                                                <span className="text-green-600 font-bold">85/100</span>
+                                            </div>
+                                            <div className="w-full bg-gray-200 rounded-full h-2">
+                                                <div className="bg-green-600 h-2 rounded-full transition-all duration-300" style={{ width: '85%' }}></div>
+                                            </div>
+                                        </div>
                                     </div>
+                                )
+                            },
+                            {
+                                icon: <Heart className="w-8 h-8 text-pink-600" />,
+                                title: "ファン体験を<br />最大化",
+                                description: "来場時間通知とリマインダーで、待ち時間を有効活用。安心・快適。",
+                                visual: (
+                                    <div className="bg-pink-50 rounded-lg p-4">
+                                        <div className="bg-white rounded-lg border border-pink-200 p-3">
+                                            <div className="flex items-center mb-2">
+                                                <div className="w-2 h-2 bg-pink-500 rounded-full mr-2"></div>
+                                                <div className="text-sm font-bold text-pink-800">通知</div>
+                                            </div>
+                                            <div className="text-xs text-pink-700">入場時間まで30分です</div>
+                                            <div className="text-xs text-pink-600">会場: メインホール</div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        ].map((feature, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 group hover:-translate-y-2">
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        {feature.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3" dangerouslySetInnerHTML={{ __html: feature.title }}></h3>
+                                    <p className="text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
+                                    {feature.visual}
                                 </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* 運営者さまのための４大メリット（承） */}
-            <section id="benefits" className="py-16 bg-white">
+            {/* Benefits Section */}
+            <section id="benefits" className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            運営者さまのための４大メリット
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                            運営者のための４大メリット
                         </h2>
+                        <p className="text-xl text-gray-600">具体的な効果で、投資対効果を実感</p>
                     </div>
 
-                    <div className="benefit-grid">
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">💰</span>
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-gray-900 mb-4">運営コストの大幅削減</h4>
-                                    <ul className="space-y-2 text-gray-600 mb-4">
-                                        <li>• 紙の整理券・特典券の印刷・在庫管理が不要</li>
-                                        <li>• 問い合わせ対応工数が削減</li>
-                                    </ul>
-                                    <div className="bg-green-50 rounded-lg p-3">
-                                        <div className="text-sm font-bold text-green-800 mb-1">コスト削減効果</div>
-                                        <div className="text-xs text-green-700">印刷費: -80%</div>
-                                        <div className="text-xs text-green-700">人件費: -60%</div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                icon: <DollarSign className="w-8 h-8 text-green-600" />,
+                                title: "運営コストの大幅削減",
+                                points: [
+                                    "紙の整理券・特典券の印刷・在庫管理が不要",
+                                    "問い合わせ対応工数が削減"
+                                ]
+                            },
+                            {
+                                icon: <TrendingUp className="w-8 h-8 text-blue-600" />,
+                                title: "利用履歴はリアルタイム集計",
+                                points: [
+                                    "事後の手作業集計がゼロ",
+                                    "次回施策に即フィードバック"
+                                ]
+                            },
+                            {
+                                icon: <Shield className="w-8 h-8 text-purple-600" />,
+                                title: "不正利用・偽造を防止",
+                                points: [
+                                    "メール認証で横流しをブロック",
+                                    "現場でトラブル時にも即対応可能"
+                                ]
+                            },
+                            {
+                                icon: <Smartphone className="w-8 h-8 text-orange-600" />,
+                                title: "顧客満足度アップ",
+                                points: [
+                                    "待ち時間の削減とスムーズな入場",
+                                    "スタッフの作業効率向上と、現場での混乱を最小化"
+                                ]
+                            }
+                        ].map((benefit, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100">
+                                <div className="flex items-start space-x-6">
+                                    <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        {benefit.icon}
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h4>
+                                        <ul className="space-y-3 text-gray-600">
+                                            {benefit.points.map((point, i) => (
+                                                <li key={i} className="flex items-start">
+                                                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                                                    {point}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">📈</span>
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-gray-900 mb-4">利用履歴はリアルタイム集計</h4>
-                                    <ul className="space-y-2 text-gray-600 mb-4">
-                                        <li>• 事後の手作業集計がゼロ</li>
-                                        <li>• 次回施策に即フィードバック</li>
-                                    </ul>
-                                    <div className="bg-green-50 rounded-lg p-3">
-                                        <div className="text-sm font-bold text-green-800 mb-1">集計時間</div>
-                                        <div className="text-xs text-green-700">従来: 2時間 → 現在: リアルタイム</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">🔒</span>
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-gray-900 mb-4">不正利用・偽造を防止</h4>
-                                    <ul className="space-y-2 text-gray-600 mb-4">
-                                        <li>• QRコード＋DB管理で重複利用や横流しをブロック</li>
-                                        <li>• 現場でトラブル時にも即対応可能</li>
-                                    </ul>
-                                    <div className="bg-green-50 rounded-lg p-3">
-                                        <div className="text-sm font-bold text-green-800 mb-1">セキュリティ</div>
-                                        <div className="text-xs text-green-700">不正利用: 99.9%削減</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card">
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span className="text-2xl">📱</span>
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-bold text-gray-900 mb-4">アプリ内販促で売上アップ</h4>
-                                    <ul className="space-y-2 text-gray-600 mb-4">
-                                        <li>• 限定販売・割引キャンペーンが簡単設定</li>
-                                        <li>• リピーター向けプッシュで再参加を促進</li>
-                                    </ul>
-                                    <div className="bg-green-50 rounded-lg p-3">
-                                        <div className="text-sm font-bold text-green-800 mb-1">売上効果</div>
-                                        <div className="text-xs text-green-700">追加売上: +25%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-
-
-            {/* ファンの利便性（承→転） */}
-            <section className="py-16 bg-white">
+            {/* Flow Section */}
+            <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                            ファンの利便性
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                            フロー（使い方）
                         </h2>
+                        <p className="text-xl text-gray-600">📌 「たった3ステップで導入完了！」</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🔒</span>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                step: "1️⃣",
+                                title: "イベント登録",
+                                description: "イベント情報を入力"
+                            },
+                            {
+                                step: "2️⃣",
+                                title: "整理券発行",
+                                description: "QRコードを自動生成"
+                            },
+                            {
+                                step: "3️⃣",
+                                title: "リアルタイム管理",
+                                description: "発行状況を確認"
+                            }
+                        ].map((item, index) => (
+                            <div key={index} className="text-center group">
+                                <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                                    <span className="text-2xl">{item.step}</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                                <p className="text-gray-600 leading-relaxed">{item.description}</p>
                             </div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">紛失リスクゼロ</h3>
-                            <p className="text-gray-600">
-                                全特典券をアプリで一括管理。忘れ物・紛失の心配なし。
-                            </p>
-                        </div>
-
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">⚡</span>
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">瞬時にQR確認</h3>
-                            <p className="text-gray-600">
-                                スタッフもファンもスムーズチェックで待ち時間を最小化。
-                            </p>
-                        </div>
-
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🔔</span>
-                            </div>
-                            <h3 className="text-lg font-bold text-gray-900 mb-2">リマインダー機能</h3>
-                            <p className="text-gray-600">
-                                来場時間や特典利用予定をプッシュ通知でお知らせ。
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* ご利用シーン例（転） */}
-            <section className="py-16 bg-gray-50">
+            {/* Use Cases */}
+            <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
                             ご利用シーン例
                         </h2>
+                        <p className="text-xl text-gray-600">様々なイベントでご活用いただけます</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div className="card text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🎵</span>
-                            </div>
-                            <h3 className="font-bold text-gray-900 mb-3">ライブ入場整理</h3>
-                            <div className="bg-gray-50 rounded-lg p-3">
-                                <div className="bg-white rounded border p-2 text-center">
-                                    <div className="text-xs text-gray-600 mb-1">ステージA</div>
-                                    <div className="text-xs font-bold text-blue-600">整理券 #001-050</div>
-                                    <div className="text-xs text-gray-500">入場時間: 19:00</div>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {[
+                            {
+                                icon: <Music className="w-8 h-8 text-purple-600" />,
+                                title: "ライブ会場での入場整理"
+                            },
+                            {
+                                icon: <Handshake className="w-8 h-8 text-blue-600" />,
+                                title: "特典会や握手会での順番管理"
+                            },
+                            {
+                                icon: <ShoppingBag className="w-8 h-8 text-green-600" />,
+                                title: "限定グッズ販売イベントでの整理券配布"
+                            }
+                        ].map((usecase, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 group hover:-translate-y-1">
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        {usecase.icon}
+                                    </div>
+                                    <h3 className="font-bold text-gray-900 text-xl leading-relaxed">{usecase.title}</h3>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="card text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🤝</span>
-                            </div>
-                            <h3 className="font-bold text-gray-900 mb-3">特典会・握手会の順番管理</h3>
-                            <div className="bg-gray-50 rounded-lg p-3">
-                                <div className="bg-white rounded border p-2 text-center">
-                                    <div className="text-xs text-gray-600 mb-1">握手会</div>
-                                    <div className="text-xs font-bold text-blue-600">順番: 15番目</div>
-                                    <div className="text-xs text-gray-500">予定時間: 14:30</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🛍️</span>
-                            </div>
-                            <h3 className="font-bold text-gray-900 mb-3">限定グッズ販売の整理券配布</h3>
-                            <div className="bg-gray-50 rounded-lg p-3">
-                                <div className="bg-white rounded border p-2 text-center">
-                                    <div className="text-xs text-gray-600 mb-1">限定Tシャツ</div>
-                                    <div className="text-xs font-bold text-blue-600">購入券 #001</div>
-                                    <div className="text-xs text-gray-500">販売時間: 13:00</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="card text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🍔</span>
-                            </div>
-                            <h3 className="font-bold text-gray-900 mb-3">フードコートの順番待ち通知</h3>
-                            <p className="text-sm text-gray-600 mb-3">（LINE連携オプション）</p>
-                            <div className="bg-gray-50 rounded-lg p-3">
-                                <div className="bg-white rounded border p-2 text-center">
-                                    <div className="text-xs text-gray-600 mb-1">フードコート</div>
-                                    <div className="text-xs font-bold text-blue-600">順番: 8番目</div>
-                                    <div className="text-xs text-gray-500">予想待ち時間: 15分</div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* よくある質問（FAQ）（転） */}
-            <section id="faq" className="py-16 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            {/* FAQ */}
+            <section id="faq" className="py-20 bg-gray-50">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
                             よくある質問（FAQ）
                         </h2>
-                    </div>
-
-                    <div className="overflow-x-auto">
-                        <table className="faq-table">
-                            <thead>
-                                <tr>
-                                    <th>Q</th>
-                                    <th>A</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>会員登録は必要ですか？</td>
-                                    <td>いいえ。Webからワンクリックで整理券・特典券を取得できます。</td>
-                                </tr>
-                                <tr>
-                                    <td>発行上限は設定できますか？</td>
-                                    <td>はい。イベントごとに運営者が上限数を自由に設定可能です。</td>
-                                </tr>
-                                <tr>
-                                    <td>キャンセルはできますか？</td>
-                                    <td>はい。管理画面からいつでもキャンセルできます。</td>
-                                </tr>
-                                <tr>
-                                    <td>データはどこまで見られますか？</td>
-                                    <td>発券数・利用数・キャンセル数など、リアルタイムで詳細把握できます。</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* クロージング＆CTA（結） */}
-            <section id="signup" className="py-16 bg-gradient-to-br from-blue-600 to-indigo-700">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
-                        <blockquote className="text-xl text-white font-medium italic">
-                            「整理券も特典券も、もう紙に頼らない。NARABANでイベント運営を革新し、ファンに最高の体験を。」
-                        </blockquote>
+                        <p className="text-xl text-gray-600">お客様からよくいただく質問にお答えします</p>
                     </div>
 
                     <div className="space-y-4">
-                        <a href="#signup-form" className="btn btn-lg bg-white text-blue-600 hover:bg-gray-100">
-                            今すぐ無料ベータ版に登録する
-                        </a>
-                        <p className="text-blue-100 text-sm">
-                            所要時間：30秒／ベータ版は期間限定・先着順
-                        </p>
+                        {faqData.map((faq, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                                <button
+                                    onClick={() => toggleFaq(index)}
+                                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                                >
+                                    <span className="font-semibold text-gray-900 text-lg">{faq.q}</span>
+                                    {openFaq === index ? (
+                                        <ChevronUp className="w-5 h-5 text-gray-500" />
+                                    ) : (
+                                        <ChevronDown className="w-5 h-5 text-gray-500" />
+                                    )}
+                                </button>
+                                {openFaq === index && (
+                                    <div className="px-6 pb-4 border-t border-gray-100 bg-gray-50">
+                                        <p className="text-gray-700 pt-4 leading-relaxed">{faq.a}</p>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* フッター */}
-            <footer className="bg-gray-900 text-white py-12">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div>
-                            <a
-                                href="https://e3sys.co.jp/"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
-                                <Image
-                                    src="/e3sys_white.png"
-                                    alt="株式会社エミシス"
-                                    width={200}
-                                    height={67}
-                                    className="mb-4"
-                                />
-                            </a>
-                            <p>"WHACK!WHACK!し続ける"人と環境をつくる</p>
+            {/* CTA Section */}
+            <section id="signup" className="py-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 mb-8">
+                        <blockquote className="text-2xl text-white font-medium leading-relaxed">
+                            「整理券も特典券も、もう紙に頼らない。NARABANでイベント運営を革新し、運営効率と顧客満足度を向上させましょう。」
+                        </blockquote>
+                    </div>
+
+                    <div className="space-y-6">
+                        <a href="#signup-form" className="group inline-block bg-white text-blue-600 hover:bg-gray-100 px-10 py-4 rounded-2xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl font-bold text-lg">
+                            今すぐ無料ベータ版に登録する
+                            <div className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">→</div>
+                        </a>
+                        <p className="text-blue-100">
+                            所要時間：30秒／ベータ版は期間限定・先着順
+                        </p>
+
+                        <div className="flex justify-center items-center space-x-8 pt-8">
+                            <div className="flex items-center space-x-2 text-white/80">
+                                <CheckCircle className="w-5 h-5" />
+                                <span>無料で試用</span>
+                            </div>
+                            <div className="flex items-center space-x-2 text-white/80">
+                                <CheckCircle className="w-5 h-5" />
+                                <span>導入サポート付き</span>
+                            </div>
+                            <div className="flex items-center space-x-2 text-white/80">
+                                <CheckCircle className="w-5 h-5" />
+                                <span>30秒で登録完了</span>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-gray-900 text-white py-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-3 gap-12">
                         <div>
-                            <h3 className="text-xl font-bold mb-4">運営会社</h3>
-                            <ul className="space-y-2">
+                            <div className="text-2xl font-bold text-white mb-4">NARABAN</div>
+                            <p className="text-gray-300 mb-6 leading-relaxed">
+                                "WHACK!WHACK!し続ける"人と環境をつくる
+                            </p>
+                            <div className="flex space-x-4">
+                                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-200 cursor-pointer">
+                                    <div className="w-5 h-5 bg-white rounded"></div>
+                                </div>
+                                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors duration-200 cursor-pointer">
+                                    <div className="w-5 h-5 bg-white rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 className="text-xl font-bold mb-6">運営会社</h3>
+                            <ul className="space-y-3">
                                 <li>
-                                    <a
-                                        href="https://e3sys.co.jp/about/"
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className="hover:text-gray-300"
-                                    >
+                                    <a href="https://e3sys.co.jp/about/" target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-white transition-colors duration-200">
                                         エミシスについて
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        href="https://e3sys.co.jp/company/"
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className="hover:text-gray-300"
-                                    >
+                                    <a href="https://e3sys.co.jp/company/" target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-white transition-colors duration-200">
                                         会社情報
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        href="https://e3sys.co.jp/policy/"
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className="hover:text-gray-300"
-                                    >
+                                    <a href="https://e3sys.co.jp/policy/" target="_blank" rel="noreferrer noopener" className="text-gray-300 hover:text-white transition-colors duration-200">
                                         セキュリティ・プライバシーポリシー
                                     </a>
                                 </li>
                             </ul>
                         </div>
+
                         <div className="text-center">
-                            <div className="w-48 h-48 bg-gray-700 rounded-lg flex items-center justify-center mx-auto mb-4">
-                                <span className="text-white text-lg font-medium">NARABAN QR Code</span>
+                            <h4 className="text-lg font-bold mb-4">今すぐ始める</h4>
+                            <div className="w-32 h-32 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <img
+                                    src="https://placehold.jp/112x112.png"
+                                    alt="NARABAN QR Code"
+                                    className="w-28 h-28 rounded-xl object-cover"
+                                />
                             </div>
+                            <p className="text-sm text-gray-400">QRコードでアクセス</p>
                         </div>
                     </div>
-                    <div className="text-center mt-8 pt-8 border-t border-gray-800">
-                        <p>&copy; 2025 NARABAN. All Rights Reserved.</p>
+
+                    <div className="text-center mt-12 pt-8 border-t border-gray-800">
+                        <p className="text-gray-400">&copy; 2025 NARABAN. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
