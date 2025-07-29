@@ -75,7 +75,7 @@ export default function NarabanPage() {
                             <a href="#faq" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
                                 FAQ
                             </a>
-                            <a href="#signup" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <a href="https://naraban.jp/signup" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                                 無料ベータ版
                             </a>
                         </div>
@@ -104,7 +104,7 @@ export default function NarabanPage() {
                                 <a href="#faq" className="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-4">
                                     FAQ
                                 </a>
-                                <a href="#signup" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-200 mx-4 text-center">
+                                <a href="https://naraban.jp/signup" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition-all duration-200 mx-4 text-center">
                                     無料ベータ版
                                 </a>
                             </div>
@@ -136,7 +136,7 @@ export default function NarabanPage() {
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <a href="#signup" className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center">
+                                <a href="https://naraban.jp/signup" className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center">
                                     無料ベータ版を今すぐ試す
                                     <div className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">→</div>
                                 </a>
@@ -497,7 +497,7 @@ export default function NarabanPage() {
                     </div>
 
                     <div className="space-y-6">
-                        <a href="#signup-form" className="group inline-block bg-white text-blue-600 hover:bg-gray-100 px-10 py-4 rounded-2xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl font-bold text-lg">
+                        <a href="https://naraban.jp/signup" className="group inline-block bg-white text-blue-600 hover:bg-gray-100 px-10 py-4 rounded-2xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl font-bold text-lg">
                             今すぐ無料ベータ版に登録する
                             <div className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">→</div>
                         </a>
