@@ -43,8 +43,8 @@ function NarabanPageContent() {
             a: "はい。イベントごとに運営者が上限数を自由に設定可能です。"
         },
         {
-            q: "キャンセルはできますか？",
-            a: "はい。管理画面からいつでもキャンセルできます。"
+            q: "本当に無料で使えますか？",
+            a: "はい、フリープランは完全無料です。月間1,000枚まで発券可能です。"
         },
         {
             q: "データはどこまで見られますか？",
@@ -167,23 +167,31 @@ function NarabanPageContent() {
                         <p className="text-xl text-text-light">多くの運営者が直面している課題を解決します</p>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-6 mb-12">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                         {[
                             {
-                                icon: "😰",
-                                title: "整理券配布の列が<br />長く、運営が大変…"
-                            },
-                            {
                                 icon: "📄",
-                                title: "紙の整理券の印刷・<br />管理コストが高い…"
+                                title: "紙の整理券の管理が<br />面倒で時間がかかる"
                             },
                             {
-                                icon: "🎫",
-                                title: "不正利用や<br />偽造のリスクも…"
+                                icon: "😰",
+                                title: "当日の混雑や<br />クレーム対応が大変"
                             },
                             {
-                                icon: "📊",
-                                title: "発券数や利用状況の<br />集計に時間がかかる…"
+                                icon: "💼",
+                                title: "運営スタッフの<br />負担が増大している"
+                            },
+                            {
+                                icon: "😤",
+                                title: "ファンから「待ち時間が<br />長い」とクレーム"
+                            },
+                            {
+                                icon: "📋",
+                                title: "複数のイベントを別々に<br />管理するのが煩雑"
+                            },
+                            {
+                                icon: "❓",
+                                title: "順番が分かりにくいと<br />参加者から不満"
                             }
                         ].map((problem, index) => (
                             <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-border-gray group hover:-translate-y-1">
@@ -378,14 +386,56 @@ function NarabanPageContent() {
                 </div>
             </section>
 
+            {/* Comparison Section */}
+            <section className="py-20 bg-muted/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+                            他の整理券アプリと何が違う？
+                        </h2>
+                    </div>
+                    <div className="overflow-x-auto">
+                        <table className="w-full bg-white rounded-2xl shadow-lg">
+                            <thead>
+                                <tr className="border-b border-border-gray">
+                                    <th className="p-4 text-left text-text-dark font-semibold">機能/特徴</th>
+                                    <th className="p-4 text-center text-text-dark font-semibold">他社サービスA</th>
+                                    <th className="p-4 text-center text-text-dark font-semibold">他社サービスB</th>
+                                    <th className="p-4 text-center bg-primary/10">
+                                        <span className="font-bold text-primary">NARABAN</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    ["料金", "無料", "従量課金+初期費用+月額", "フリープラン+従量課金"],
+                                    ["複数イベント管理", "×", "△（個別契約）", "◎（一元管理）"],
+                                    ["追加アカウント", "なし", "LINE公式アカウント必要", "なし"],
+                                    ["カスタマイズ性", "限定的", "一部可能", "高い"],
+                                    ["導入難易度", "低", "中（LINE設定必要）", "低"]
+                                ].map((row, index) => (
+                                    <tr key={index} className="border-b border-border-gray hover:bg-bg-muted/20">
+                                        <td className="p-4 font-medium text-text-dark">{row[0]}</td>
+                                        <td className="p-4 text-center text-text-light">{row[1]}</td>
+                                        <td className="p-4 text-center text-text-light">{row[2]}</td>
+                                        <td className="p-4 text-center bg-primary/5 font-semibold text-primary">
+                                            {row[3]}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
             {/* Flow Section */}
             <section className="py-20 bg-gradient-to-br from-bg-muted to-primary/10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-text-dark mb-4">
-                            フロー（使い方）
+                            たった3ステップで導入完了！
                         </h2>
-                        <p className="text-xl text-text-light">📌 「たった3ステップで導入完了！」</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -452,6 +502,85 @@ function NarabanPageContent() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing Section */}
+            <section className="py-20 bg-muted/30">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
+                            選べる2つのプラン
+                        </h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        {/* Free Plan */}
+                        <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-border-gray">
+                            <div className="text-center mb-8">
+                                <h3 className="text-2xl font-bold text-text-dark mb-2">フリープラン</h3>
+                                <p className="text-text-light mb-4">小規模イベント・初回導入に最適</p>
+                                <div className="text-4xl font-bold text-text-dark">無料</div>
+                            </div>
+
+                            <div className="space-y-4 mb-8">
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">月間1,000枚まで発券</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">同時管理3件まで</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">基本機能</span>
+                                </div>
+                            </div>
+
+                            <a href="https://naraban.jp/signup" className="w-full bg-bg-muted hover:bg-primary text-text-dark hover:text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold text-center block border border-border-gray">
+                                今すぐ始める
+                            </a>
+                        </div>
+
+                        {/* Pay-per-use Plan */}
+                        <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border-2 border-primary relative">
+                            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                <div className="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">
+                                    おすすめ
+                                </div>
+                            </div>
+
+                            <div className="text-center mb-8">
+                                <h3 className="text-2xl font-bold text-text-dark mb-2">従量課金プラン</h3>
+                                <p className="text-text-light mb-4">中〜大規模イベントに最適</p>
+                                <div className="text-4xl font-bold text-text-dark">使った分だけ</div>
+                            </div>
+
+                            <div className="space-y-4 mb-8">
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">発券数無制限</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">イベント数無制限</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">全機能 + カスタマイズ</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <CheckCircle className="w-5 h-5 text-primary" />
+                                    <span className="text-text-dark">優先サポート</span>
+                                </div>
+                            </div>
+
+                            <a href="https://naraban.jp/signup" className="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl transition-all duration-200 font-semibold text-center block">
+                                お問い合わせ
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
