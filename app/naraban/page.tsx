@@ -661,18 +661,10 @@ function NarabanPageContent() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-3 gap-12">
                         <div>
-                            <div className="text-2xl font-bold text-white mb-4">naraban</div>
+                            <div className="text-2xl font-bold text-white mb-4">株式会社エミシス</div>
                             <p className="text-text-light mb-6 leading-relaxed">
                                 "WHACK!WHACK!し続ける"人と環境をつくる
                             </p>
-                            <div className="flex space-x-4">
-                                <div className="w-10 h-10 bg-primary-dark rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-200 cursor-pointer">
-                                    <div className="w-5 h-5 bg-white rounded"></div>
-                                </div>
-                                <div className="w-10 h-10 bg-primary-dark rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-200 cursor-pointer">
-                                    <div className="w-5 h-5 bg-white rounded"></div>
-                                </div>
-                            </div>
                         </div>
 
                         <div>
@@ -695,22 +687,10 @@ function NarabanPageContent() {
                                 </li>
                             </ul>
                         </div>
-
-                        <div className="text-center">
-                            <h4 className="text-lg font-bold mb-4">今すぐ始める</h4>
-                            <div className="w-32 h-32 bg-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <img
-                                    src="https://placehold.jp/112x112.png"
-                                    alt="naraban QR Code"
-                                    className="w-28 h-28 rounded-xl object-cover"
-                                />
-                            </div>
-                            <p className="text-sm text-text-light">QRコードでアクセス</p>
-                        </div>
                     </div>
 
                     <div className="text-center mt-12 pt-8 border-t border-border-gray">
-                        <p className="text-text-light">&copy; 2025 naraban. All Rights Reserved.</p>
+                        <p className="text-text-light">&copy; 2025 e3sys Inc. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
