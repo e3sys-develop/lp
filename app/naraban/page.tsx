@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import {
@@ -29,9 +30,9 @@ function NarabanPageContent() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-    const toggleFaq = (index: number) => {
+    const toggleFaq = React.useCallback((index: number) => {
         setOpenFaq(openFaq === index ? null : index);
-    };
+    }, [openFaq]);
 
     const faqData = [
         {
@@ -52,23 +53,47 @@ function NarabanPageContent() {
         }
     ];
 
+    // FAQ用の構造化データ
+    const faqStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+            }
+        }))
+    };
+
     return (
         <div className="min-h-screen bg-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+            />
             <ThemeSwitcher />
             {/* Navigation */}
             <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-lg z-50 border-b border-border-gray shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex-shrink-0 flex items-center">
-                            <a href="/" className="flex items-center space-x-2">
+                            <a href="/" className="flex items-center space-x-2" aria-label="narabanホームページへ">
                                 <span>
-                                    <img src="/naraban/logo.svg" alt="ナラバン ロゴ" className="h-16 w-auto" />
+                                    <Image
+                                        src="/naraban/logo.svg"
+                                        alt="naraban - デジタル整理券システム"
+                                        width={120}
+                                        height={64}
+                                        className="h-16 w-auto"
+                                    />
                                 </span>
                             </a>
                         </div>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center space-x-8">
+                        <nav className="hidden md:flex items-center space-x-8" aria-label="メインナビゲーション">
                             <a href="#features" className="text-text-light hover:text-primary transition-colors duration-200">
                                 機能
                             </a>
@@ -78,10 +103,10 @@ function NarabanPageContent() {
                             <a href="#faq" className="text-text-light hover:text-primary transition-colors duration-200">
                                 FAQ
                             </a>
-                            <a href="https://naraban.jp/signup" className="bg-accent hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <a href="https://naraban.jp/signup" className="bg-accent hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl" aria-label="無料ベータ版に登録する">
                                 無料ベータ版
                             </a>
-                        </div>
+                        </nav>
 
                         {/* Mobile menu button */}
                         <div className="md:hidden">
@@ -117,7 +142,7 @@ function NarabanPageContent() {
             </nav>
 
             {/* Hero Section */}
-            <section className="mt-16 pt-16 pb-20 bg-gradient-to-br from-bg-muted via-blue-50 to-primary/10 overflow-hidden">
+            <section className="mt-16 pt-16 pb-20 bg-gradient-to-br from-bg-muted via-blue-50 to-primary/10 overflow-hidden" aria-labelledby="hero-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8">
@@ -126,7 +151,7 @@ function NarabanPageContent() {
                                     <Star className="w-4 h-4 mr-2" />
                                     イベント運営を革新
                                 </div>
-                                <h1 className="text-5xl lg:text-6xl font-bold text-text-dark">
+                                <h1 id="hero-heading" className="text-5xl lg:text-6xl font-bold text-text-dark">
                                     整理券発行、<br />
                                     管理の
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dark">
@@ -140,9 +165,9 @@ function NarabanPageContent() {
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <a href="https://naraban.jp/signup" className="group bg-accent hover:bg-primary-dark text-white px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center">
+                                <a href="https://naraban.jp/signup" className="group bg-accent hover:bg-primary-dark text-white px-8 py-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold text-center" aria-label="無料ベータ版に登録する">
                                     無料ベータ版を今すぐ試す
-                                    <div className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1">→</div>
+                                    <div className="inline-block ml-2 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">→</div>
                                 </a>
                                 <a href="#features" className="border-2 border-border-gray hover:border-primary text-text-dark hover:text-primary px-8 py-4 rounded-xl transition-all duration-200 font-semibold text-center">
                                     機能を見る
@@ -151,17 +176,24 @@ function NarabanPageContent() {
                         </div>
 
                         <div className="relative">
-                            <img src="/naraban/hero.png" alt="ナラバン ヒーローイメージ" className="w-full h-full object-cover rounded-3xl" />
+                            <Image
+                                src="/naraban/hero.png"
+                                alt="narabanデジタル整理券システムのデモ画面 - スマートフォンで整理券を管理する様子"
+                                width={600}
+                                height={400}
+                                className="w-full h-full object-cover rounded-3xl"
+                                priority
+                            />
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Problem Section */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-white" aria-labelledby="problems-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-text-dark mb-4">
+                        <h2 id="problems-heading" className="text-4xl font-bold text-text-dark mb-4">
                             イベント運営でこんな<span className="text-accent">"課題"</span>ありませんか？
                         </h2>
                         <p className="text-xl text-text-light">多くの運営者が直面している課題を解決します</p>
@@ -220,10 +252,10 @@ function NarabanPageContent() {
             </section>
 
             {/* Features Section */}
-            <section id="features" className="py-20 bg-gradient-to-br from-bg-muted to-primary/5">
+            <section id="features" className="py-20 bg-gradient-to-br from-bg-muted to-primary/5" aria-labelledby="features-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-text-dark mb-4">
+                        <h2 id="features-heading" className="text-4xl font-bold text-text-dark mb-4">
                             narabanが選ばれる理由
                         </h2>
                         <p className="text-xl text-text-light">革新的な機能で、イベント運営を変革します</p>
@@ -402,7 +434,7 @@ function NarabanPageContent() {
                                     <th className="p-4 text-center text-text-dark font-semibold">他社サービスA</th>
                                     <th className="p-4 text-center text-text-dark font-semibold">他社サービスB</th>
                                     <th className="p-4 text-center bg-primary/10">
-                                        <span className="font-bold text-primary">NARABAN</span>
+                                        <span className="font-bold text-primary">naraban</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -586,35 +618,37 @@ function NarabanPageContent() {
             </section>
 
             {/* FAQ */}
-            <section id="faq" className="py-20 bg-bg-muted">
+            <section id="faq" className="py-20 bg-bg-muted" aria-labelledby="faq-heading">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-text-dark mb-4">
+                        <h2 id="faq-heading" className="text-4xl font-bold text-text-dark mb-4">
                             よくある質問（FAQ）
                         </h2>
                         <p className="text-xl text-text-light">お客様からよくいただく質問にお答えします</p>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4" role="region" aria-labelledby="faq-heading">
                         {faqData.map((faq, index) => (
-                            <div key={index} className="bg-white rounded-2xl shadow-sm border border-border-gray overflow-hidden">
+                            <article key={index} className="bg-white rounded-2xl shadow-sm border border-border-gray overflow-hidden">
                                 <button
                                     onClick={() => toggleFaq(index)}
                                     className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-bg-muted transition-colors duration-200"
+                                    aria-expanded={openFaq === index}
+                                    aria-controls={`faq-answer-${index}`}
                                 >
                                     <span className="font-semibold text-text-dark text-lg">{faq.q}</span>
                                     {openFaq === index ? (
-                                        <ChevronUp className="w-5 h-5 text-text-light" />
+                                        <ChevronUp className="w-5 h-5 text-text-light" aria-hidden="true" />
                                     ) : (
-                                        <ChevronDown className="w-5 h-5 text-text-light" />
+                                        <ChevronDown className="w-5 h-5 text-text-light" aria-hidden="true" />
                                     )}
                                 </button>
                                 {openFaq === index && (
-                                    <div className="px-6 pb-4 border-t border-border-gray bg-bg-muted">
+                                    <div id={`faq-answer-${index}`} className="px-6 pb-4 border-t border-border-gray bg-bg-muted">
                                         <p className="text-text-light pt-4 leading-relaxed">{faq.a}</p>
                                     </div>
                                 )}
-                            </div>
+                            </article>
                         ))}
                     </div>
                 </div>
